@@ -1,0 +1,13 @@
+{
+  "name": "find-replace-cli",
+  "description": "Find and replace content in files",
+  "version": "0.0.1",
+  "bin": {
+    "find-replace-cli": "./src/find-replace-cli.js"
+  },
+  "dependencies": {
+    "commander": "2.9.0",
+    "fs-promise": "0.3.1",
+    "glob-all": "3.0.1"
+  }
+}

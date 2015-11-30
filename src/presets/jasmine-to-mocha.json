@@ -1,0 +1,166 @@
+{
+  "files": [
+    "**/*.{js,jsx,ts,tsx}",
+    "!node_modules/**",
+    "!**/*.d.ts"
+  ],
+  "transforms": [
+    {
+        "from": ".toBe(",
+        "to": ".to.equal("
+    },
+    {
+        "from": ".toBeCloseTo(",
+        "to": ".to.be.closeTo("
+    },
+    {
+        "from": ".toBeDefined()",
+        "to": ".to.be.defined"
+    },
+    {
+        "from": ".toBeFalsy()",
+        "to": ".to.be.false"
+    },
+    {
+        "from": ".toBeGreaterThan(",
+        "to": ".to.be.above("
+    },
+    {
+        "from": ".toBeLessThan(",
+        "to": ".to.be.below("
+    },
+    {
+        "from": ".toBeNull()",
+        "to": ".to.be.null"
+    },
+    {
+        "from": ".toBeStubComponent(",
+        "to": "to.be.stubComponent("
+    },
+    {
+        "from": ".toBeTruthy()",
+        "to": ".to.be.true"
+    },
+    {
+        "from": ".toBeUndefined()",
+        "to": ".to.be.undefined"
+    },
+    {
+        "from": ".toContain(",
+        "to": ".to.contain("
+    },
+    {
+        "from": ".toContainText(",
+        "to": ".to.have.text("
+    },
+    {
+        "from": ".toDeepEqual(",
+        "to": ".to.deep.equal("
+    },
+    {
+        "from": ".toEqual(",
+        "to": ".to.eql("
+    },
+    {
+      "from": ".toHaveBeenCalled()",
+      "to": ".to.be.called"
+    },
+    {
+      "from": ".toHaveBeenCalledWith(",
+      "to": ".to.be.calledWith("
+    },
+    {
+      "from": ".toHaveProp(",
+      "to": ".to.have.prop("
+    },
+    {
+      "from": ".toMatch(",
+      "to": ".to.match("
+    },
+    {
+      "from": ".toThrow(",
+      "to": ".to.throw("
+    },
+    {
+      "from": ".toThrowError(",
+      "to": ".to.throw("
+    },
+    {
+      "from": "jasmine.any()",
+      "to": "sinon.match.any"
+    },
+    {
+      "from": "jasmine.any(Array)",
+      "to": "sinon.match.array"
+    },
+    {
+      "from": "jasmine.any(Boolean)",
+      "to": "sinon.match.bool"
+    },
+    {
+      "from": "jasmine.any(Date)",
+      "to": "sinon.match.date"
+    },
+    {
+      "from": "jasmine.any(Function)",
+      "to": "sinon.match.func"
+    },
+    {
+      "from": "jasmine.any(Number)",
+      "to": "sinon.match.number"
+    },
+    {
+      "from": "jasmine.any(Object)",
+      "to": "sinon.match.object"
+    },
+    {
+      "from": "jasmine.any(RegExp)",
+      "to": "sinon.match.regexp"
+    },
+    {
+      "from": "jasmine.any(String)",
+      "to": "sinon.match.string"
+    },
+    {
+      "from": ".calls.count()",
+      "to": ".callCount"
+    },
+    {
+      "from": ".calls.argsFor\\(([^\\)]+)\\)\\[([^\\)]+)\\]",
+      "regex": true,
+      "to": ".args[$1][$2]"
+    },
+    {
+      "from": "(\\n|\\A)describe\\(([^{]+){([\\s\\S]*)spyOn",
+      "global": false,
+      "regex": true,
+      "to": "$1describe($2{\n    let sandbox;\n\n    beforeEach(() => {\n        sandbox = sinon.sandbox.create();\n    });\n\n    afterEach(() => {\n        sandbox.restore();\n    });\n$3spyOn"
+    },
+    {
+      "from": "jasmine\\.createSpy\\([^\\)]*\\)",
+      "regex": true,
+      "to": "sandbox.spy()"
+    },
+    {
+      "from": "spyOn\\(([^\\)]+)\\)\\.and\\.callThrough\\(\\)",
+      "regex": true,
+      "to": "sandbox.spy($1)"
+    },
+    {
+      "from": "spyOn\\(([^\\)]+)\\)\\.and\\.callFake\\(",
+      "regex": true,
+      "to": "sandbox.stub($1, "
+    },
+    {
+      "from": "spyOn\\(([^\\)]+)\\)\\.and\\.returnValue\\(",
+      "regex": true,
+      "to": "sandbox.stub($1).returns("
+    },
+    {
+      "from": "spyOn\\(([^\\)]+)\\)",
+      "regex": true,
+      "to": "sandbox.stub($1)"
+    }
+  ]
+}
+
