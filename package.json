@@ -1,7 +1,7 @@
 {
   "name": "find-replace-cli",
   "description": "Find and replace content in files",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "bin": {
     "find-replace-cli": "./src/find-replace-cli.js"
   },

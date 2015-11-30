@@ -11,7 +11,7 @@ npm install find-replace-cli -g
 ### Convert Jasmine Tests to Mocha/Chai
 
 ```shell
-find-replace-cli $(npm root -g)/find-replace-cli/presets/jasmine-to-mocha.json
+find-replace-cli $(npm root -g)/find-replace-cli/src/presets/jasmine-to-mocha.json
 ```
 
 ### Custom Configuration File
